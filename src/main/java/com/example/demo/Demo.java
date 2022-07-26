@@ -30,15 +30,24 @@ public class Demo {
 //        System.out.println(queue.poll());
 //        System.out.println(queue.poll());
 //        System.out.println(queue.peek());
-        Stack stack = new Stack();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        System.out.println(stack);
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
+//        Stack stack = new Stack();
+//        stack.push(1);
+//        stack.push(2);
+//        stack.push(3);
+//        stack.push(4);
+//        System.out.println(stack);
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+
+        System.out.println("0.3*3=  "+0.3*3);
+        System.out.println("0.3*3==0.3  "+(0.3*3 == 0.3));
+
+        byte a = 1;
+//        a = a+1;
+        a += 1;//+=会隐式强转为持有结果的类型
+
+
     }
 
     public static int[] twoSum(int[] nums, int target) {

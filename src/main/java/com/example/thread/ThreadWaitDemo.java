@@ -10,10 +10,13 @@ import java.util.concurrent.TimeUnit;
  * @Date 2020/7/28 15:25
  **/
 public class ThreadWaitDemo {
+
     public static Object lock = new Object();
 
     public static void main(String[] args) {
         Thread thread1 = new Thread(() -> {
+            //wait、notify必须在同步代码中使用，否则报IllegalMonitorStateException
+//            lock.notify();
             synchronized (lock) {
                 for (int i = 0; i < 10; i++) {
                     try {

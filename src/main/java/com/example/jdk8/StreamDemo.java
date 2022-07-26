@@ -36,7 +36,7 @@ public class StreamDemo {
         long c = System.currentTimeMillis();
         List<Student> list = new ArrayList<>();
         List<Map<String,Object>> mList = new ArrayList<>();
-        for (int i = 0; i < 5000000; i++) {
+        for (int i = 0; i < 500; i++) {
             list.add(new Student(i + "", i + "", i + ""));
             Map<String, Object> map = new HashMap<>();
             map.put("id", ""+i);
@@ -49,7 +49,7 @@ public class StreamDemo {
         long a = System.currentTimeMillis();
         Map<String, Student> collect = list.stream().collect(Collectors.toMap(
                 student -> student.getId(),
-                student -> student
+                Function.identity()
         ));
         System.out.println(collect.size());
         mList.stream().forEach(x -> {
@@ -57,7 +57,8 @@ public class StreamDemo {
             Student student = collect.get(id);
             x.put("student", student);
         });
-//        System.out.println(collect);
+        System.out.println(list);
+        System.out.println(collect);
         long b = System.currentTimeMillis();
         System.out.println(b - a);
 
